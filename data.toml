@@ -1,0 +1,42 @@
+## Organizers
+[organizers.ethglobal]
+name = "ETHGlobal"
+
+[organizers.ethbrasil]
+name = "Ethereum Brazil"
+
+[organizers.sporkdao]
+name = "Spork DAO"
+
+## Events
+
+[events.ethdenver]
+name = "ETHDenver"
+start_date = "14-2-2023"
+end_date = "5-3-2023"
+website = "https://www.ethdenver.com/"
+location = "4655 Humboldt St, Denver CO 80216 US"
+country = "United States"
+city = "Denver"
+organizer = "sporkdao"
+telegram = "ETHDenver"
+twitter = "ethereumdenver"
+
+[events.ethrio]
+name = "ETHDenver"
+start_date = "28-3-2023"
+end_date = "30-3-2023"
+website = "https://www.ethereumbrasil.com/ethereumrio"
+country = "Brazil"
+city = "Rio"
+organizer = "ethbrasil"
+
+[events.ethglobaltokyo]
+name = "ETHGlobal Tokyo"
+start_date = "14-4-2023"
+end_date = "16-4-2023"
+website = "https://tokyo.ethglobal.com/"
+country = "Japan"
+city = "Tokyo"
+organizer = "ethglobal"
+twitter = "ethglobal"

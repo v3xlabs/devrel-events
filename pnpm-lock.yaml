@@ -7,17 +7,21 @@ specifiers:
   react: ^18.2.0
   react-dom: ^18.2.0
   typescript: ^4.9.3
+  typescript-plugin-toml: ^0.2.0
   vite: ^4.0.4
+  vite-plugin-toml: ^0.5.0
 
 dependencies:
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
+  vite-plugin-toml: 0.5.0
 
 devDependencies:
   '@types/react': 18.0.26
   '@types/react-dom': 18.0.10
   '@vitejs/plugin-react': 3.0.1_vite@4.0.4
   typescript: 4.9.4
+  typescript-plugin-toml: 0.2.0
   vite: 4.0.4
 
 packages:
@@ -485,6 +489,14 @@ packages:
       '@jridgewell/sourcemap-codec': 1.4.14
     dev: true
 
+  /@rollup/pluginutils/4.2.1:
+    resolution: {integrity: sha512-iKnFXr7NkdZAIHiIWE+BX5ULi/ucVFYWD6TbAV+rZctiRTY2PL6tsIKhoIOaoskiWAkgu+VsbXgUVDNLHf+InQ==}
+    engines: {node: '>= 8.0.0'}
+    dependencies:
+      estree-walker: 2.0.2
+      picomatch: 2.3.1
+    dev: false
+
   /@types/prop-types/15.7.5:
     resolution: {integrity: sha512-JCB8C6SnDoQf0cNycqd/35A7MjcnK+ZTqE7judS6o7utxUCg6imJg3QK2qzHKszlTjcj2cn+NwMB2i96ubpj7w==}
     dev: true
@@ -628,6 +640,15 @@ packages:
     engines: {node: '>=0.8.0'}
     dev: true
 
+  /eslint-visitor-keys/3.3.0:
+    resolution: {integrity: sha512-mQ+suqKJVyeuwGYHAdjMFqjCyfl8+Ldnxuyp3ldiMBFKkvytrXUZWaiPCEav8qDHKty44bD+qV1IP4T+w+xXRA==}
+    engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
+    dev: false
+
+  /estree-walker/2.0.2:
+    resolution: {integrity: sha512-Rfkk/Mp/DL7JVje3u18FxFujQlTNR2q6QfMSMB7AvCBx91NGj/ba3kCfza0f6dVDbw7YlRf/nDrn7pQrCCyQ/w==}
+    dev: false
+
   /fsevents/2.3.2:
     resolution: {integrity: sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==}
     engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
@@ -725,6 +746,11 @@ packages:
     resolution: {integrity: sha512-1fygroTLlHu66zi26VoTDv8yRgm0Fccecssto+MhsZ0D/DGW2sm8E8AjW7NU5VVTRt5GxbeZ5qBuJr+HyLYkjQ==}
     dev: true
 
+  /picomatch/2.3.1:
+    resolution: {integrity: sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA==}
+    engines: {node: '>=8.6'}
+    dev: false
+
   /postcss/8.4.21:
     resolution: {integrity: sha512-tP7u/Sn/dVxK2NnruI4H9BG+x+Wxz6oeZ1cJ8P6G/PZY0IKk4k/63TDsQf2kQq3+qoJeLm2kIBUNlZe3zgb4Zg==}
     engines: {node: ^10 || ^12 || >=14}
@@ -806,6 +832,23 @@ packages:
     engines: {node: '>=4'}
     dev: true
 
+  /toml-eslint-parser/0.4.0:
+    resolution: {integrity: sha512-lwMC8RPBoAksoMFpQnB4c3zz+o9JPv1sxsduVH9AHb2o4kxQl7mtP5YaYoS33+6IdVrzHAXxi4JgowJDERoynw==}
+    engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
+    dependencies:
+      eslint-visitor-keys: 3.3.0
+    dev: false
+
+  /toml/3.0.0:
+    resolution: {integrity: sha512-y/mWCZinnvxjTKYhJ+pYxwD0mRLVvOtdS2Awbgxln6iEnt4rk0yBxeSBHkGJcPucRiG0e55mwWp+g/05rsrd6w==}
+    dev: true
+
+  /typescript-plugin-toml/0.2.0:
+    resolution: {integrity: sha512-K8P1NI8A/SAVqapEnujbhXF0hjf6Qu/SoWsIFaTLszpbaOhnr9r7jddg41T6gj9w02u+3OW4NkWAI6veRMpp3Q==}
+    dependencies:
+      toml: 3.0.0
+    dev: true
+
   /typescript/4.9.4:
     resolution: {integrity: sha512-Uz+dTXYzxXXbsFpM86Wh3dKCxrQqUcVMxwU54orwlJjOpO3ao8L7j5lH+dWfTwgCwIuM9GQ2kvVotzYJMXTBZg==}
     engines: {node: '>=4.2.0'}
@@ -822,6 +865,16 @@ packages:
       escalade: 3.1.1
       picocolors: 1.0.0
     dev: true
+
+  /vite-plugin-toml/0.5.0:
+    resolution: {integrity: sha512-68KbihVlcXzw7iUpQkuedjjrmHrEB3U6kfnW2dhFossK20wAt4nruNfI1Sn16DXnCmaA1McX+NNFlBW2ydwMnw==}
+    engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
+    peerDependencies:
+      rollup: ^2.77.0 || ^3.0.0
+    dependencies:
+      '@rollup/pluginutils': 4.2.1
+      toml-eslint-parser: 0.4.0
+    dev: false
 
   /vite/4.0.4:
     resolution: {integrity: sha512-xevPU7M8FU0i/80DMR+YhgrzR5KS2ORy1B4xcX/cXLsvnUWvfHuqMmVU6N0YiJ4JWGRJJsLCgjEzKjG9/GKoSw==}

@@ -34,11 +34,9 @@ jobs:
         with:
           toolchain: stable
 
-      - uses: actions-rs/cargo@v1
-        name: "[Rust] Run"
-        with:
-          cwd: ./ical_gen
-          command: run
+      - name: "[Rust] Run"
+        run: cargo run
+        working-directory: ./ical_gen
 
       - name: "[Rust] Move Calendar"
         run: mv ./ical_gen/calendar.ics ./www/dist/calendar.ics

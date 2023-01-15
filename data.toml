@@ -8,11 +8,20 @@ name = "Ethereum Brazil"
 [organizers.sporkdao]
 name = "Spork DAO"
 
+[organizers.starknet]
+name = "Starkware"
+
+[organizers.axelar]
+name = "Axelar"
+
+[organizers.nftparis]
+name = "NFT Paris"
+
 ## Events
 
 [events.ethdenver]
 name = "ETHDenver"
-start_date = "2023-02-14"
+start_date = "2023-02-24"
 end_date = "2023-03-5"
 website = "https://www.ethdenver.com/"
 location = "4655 Humboldt St, Denver CO 80216 US"
@@ -40,3 +49,45 @@ country = "Japan"
 city = "Tokyo"
 organizer = "ethglobal"
 twitter = "ethglobal"
+
+[events.fvmspacewarp]
+name = "FVM Space Warp"
+start_date = "2023-01-20"
+end_date = "2023-02-10"
+twitter = "ethglobal"
+location = "Online"
+organizer = "ethglobal"
+
+[events.starkwaresessions]
+name = "Starkware Sessions"
+start_date = "2023-02-05"
+end_date = "2023-02-06"
+twitter = "Starknet_edu"
+telegram = "t.me/+xpQoz-wvlOQ1YWE0"
+location = "Tel Aviv, ISR"
+country = "ISR"
+city = "Tel Aviv"
+organizer = "starknet"
+
+[events.interopsummit]
+name = "Interop Summit"
+location = "Miami, USA"
+start_date = "2023-02-20"
+end_date = "2023-02-22"
+twitter = "Interop_Summit"
+country = "USA"
+city = "Miami"
+organizer = "axelar"
+
+[events.nftparis]
+name = "NFT Paris"
+location = "Paris, FR"
+website = "nftparis.xyz"
+twitter = "nft_paris"
+organizer = "nftparis"
+start_date = "2023-02-24"
+end_date = "2023-02-25"
+
+# [events.buidlweek]
+# name = "BUIDL Week"
+# location = "Denver, USA"

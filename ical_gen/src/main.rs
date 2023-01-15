@@ -63,22 +63,35 @@ fn main() {
         println!("{}: {}", key, value.name);
 
         let start_cal = Utc
-            .datetime_from_str(&value.start_date, "%Y-%m-%d")
+            .datetime_from_str(
+                &format!("{}-00-00-00", value.start_date),
+                "%Y-%m-%d-%H-%M-%S",
+            )
             .unwrap();
         let end_cal = Utc
-            .datetime_from_str(&value.end_date.unwrap_or(value.start_date), "%Y-%m-%d")
+            .datetime_from_str(
+                &format!("{}-00-00-00", value.end_date.unwrap_or(value.start_date)),
+                "%Y-%m-%d-%H-%M-%S",
+            )
             .unwrap();
+
+        let description = value
+            .description
+            .unwrap_or("No description available".to_string());
+        let location = value
+            .location
+            .unwrap_or("No location available".to_string());
 
         cal.add_event(Events {
             uid: key,
             summary: value.name,
-            description: value.description.unwrap(),
+            description,
             dtsart: start_cal,
             dtend: end_cal,
             created: now,
             last_modified: now,
             dtstamp: now,
-            location: value.location.unwrap(),
+            location,
             sequence: 0,
             status: "CONFIRMED".to_string(),
             transp: "TRANSPARENT".to_string(),

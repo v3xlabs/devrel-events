@@ -35,7 +35,7 @@ export const Week: FC<{
                         new Date(event.end_date || event.start_date),
                         (event_end_date) =>
                             event_end_date.getMonth() > month
-                                ? 7
+                                ? daysInWeek
                                 : Math.min(
                                       Math.max(
                                           event_end_date.getDate() -

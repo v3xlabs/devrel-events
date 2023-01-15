@@ -55,25 +55,49 @@ fn main() {
         "America/New_York",
     );
 
-    // Get the UTC date of 2023-01-15 18:00:00 as DateTime
-    let start_cal = Utc.with_ymd_and_hms(2023, 1, 15, 18, 0, 0).unwrap();
-    let end_cal = Utc.with_ymd_and_hms(2023, 1, 15, 19, 0, 0).unwrap();
+    // Get the current timestamp as a date
     let now = Utc::now();
 
-    cal.add_event(Events {
-        uid: "1234".to_string(),
-        summary: "Test Event".to_string(),
-        description: "This is a test event".to_string(),
-        dtsart: start_cal,
-        dtend: end_cal,
-        created: now,
-        last_modified: now,
-        dtstamp: now,
-        location: "Location".to_string(),
-        sequence: 0,
-        status: "CONFIRMED".to_string(),
-        transp: "OPAQUE".to_string(),
-    });
+    // For each event, add it to the calendar
+    for (key, value) in data.events {
+        println!("{}: {}", key, value.name);
+
+        let start_cal = Utc.datetime_from_str(&value.start_date, "%Y-%m-%d").unwrap();
+        let end_cal = Utc.datetime_from_str(&value.end_date.unwrap(), "%Y-%m-%d").unwrap();
+
+        cal.add_event(Events {
+            uid: key,
+            summary: value.name,
+            description: value.description.unwrap(),
+            dtsart: start_cal,
+            dtend: end_cal,
+            created: now,
+            last_modified: now,
+            dtstamp: now,
+            location: value.location.unwrap(),
+            sequence: 0,
+            status: "CONFIRMED".to_string(),
+            transp: "TRANSPARENT".to_string(),
+        });
+    }
+
+    // let start_cal = Utc.with_ymd_and_hms(2023, 1, 15, 18, 0, 0).unwrap();
+    // let end_cal = Utc.with_ymd_and_hms(2023, 1, 15, 19, 0, 0).unwrap();
+
+    // cal.add_event(Events {
+    //     uid: "1234".to_string(),
+    //     summary: "Test Event".to_string(),
+    //     description: "This is a test event".to_string(),
+    //     dtsart: start_cal,
+    //     dtend: end_cal,
+    //     created: now,
+    //     last_modified: now,
+    //     dtstamp: now,
+    //     location: "Location".to_string(),
+    //     sequence: 0,
+    //     status: "CONFIRMED".to_string(),
+    //     transp: "OPAQUE".to_string(),
+    // });
 
     // Export the calendar to a file
     cal.export_ics("./calendar.ics").unwrap();

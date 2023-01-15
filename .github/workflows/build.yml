@@ -21,9 +21,13 @@ jobs:
           version: 6.0.2
 
       - name: Install packages
-        run: pnpm install
+        run: |
+          cd www
+          pnpm install
       - name: Build
-        run: pnpm build
+        run: |
+          cd www
+          pnpm build
 
       - name: Edgeserver Upload
         uses: lvkdotsh/edgeserver-action@v0.0.34
@@ -31,4 +35,4 @@ jobs:
           app_id: "137240427521642496"
           server: https://api.edgeserver.io
           token: ${{ secrets.EDGESERVER_TOKEN }}
-          directory: dist
+          directory: wwww/dist

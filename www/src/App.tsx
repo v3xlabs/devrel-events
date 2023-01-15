@@ -1,6 +1,6 @@
 import { FC, useMemo } from 'react';
 
-import data from '../data.toml';
+import data from '../../data.toml';
 import { Calendar } from './components/calendar/Calendar';
 import { EventList } from './components/EventList';
 import { Footer } from './components/Footer';

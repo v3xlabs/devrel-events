@@ -47,4 +47,4 @@ jobs:
           app_id: "137240427521642496"
           server: https://api.edgeserver.io
           token: ${{ secrets.EDGESERVER_TOKEN }}
-          directory: wwww/dist
+          directory: www/dist

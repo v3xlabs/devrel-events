@@ -33,7 +33,7 @@ export const Day: FC<{
                     'pl-1'
                 )}
             >
-                {date.getDate() + 1}
+                {date.getDate()}
             </span>
         </div>
     );

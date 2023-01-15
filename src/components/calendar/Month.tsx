@@ -47,7 +47,7 @@ export const Month: FC<{
                         daysInWeek={Math.min(daysThisMonth - 7 * index, 7)}
                         month={month}
                         now={now}
-                        start_day={index * 7}
+                        start_day={index * 7 + 1}
                         year={year}
                         events={events}
                         key={index}

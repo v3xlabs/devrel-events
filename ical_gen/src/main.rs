@@ -47,12 +47,12 @@ fn main() {
 
     // Create a new calendar
     let mut cal = Calendar::create(
-        "-//DevRel Events//My Calendar 70.9054//EN",
+        "-//V3X Labs//DevRel Events//EN",
         "2.0",
         "GREGORIAN",
         "PUBLISH",
-        "example@gmail.com",
-        "America/New_York",
+        "DevRel Events",
+        "UTC",
     );
 
     // Get the current timestamp as a date
@@ -97,24 +97,6 @@ fn main() {
             transp: "TRANSPARENT".to_string(),
         });
     }
-
-    // let start_cal = Utc.with_ymd_and_hms(2023, 1, 15, 18, 0, 0).unwrap();
-    // let end_cal = Utc.with_ymd_and_hms(2023, 1, 15, 19, 0, 0).unwrap();
-
-    // cal.add_event(Events {
-    //     uid: "1234".to_string(),
-    //     summary: "Test Event".to_string(),
-    //     description: "This is a test event".to_string(),
-    //     dtsart: start_cal,
-    //     dtend: end_cal,
-    //     created: now,
-    //     last_modified: now,
-    //     dtstamp: now,
-    //     location: "Location".to_string(),
-    //     sequence: 0,
-    //     status: "CONFIRMED".to_string(),
-    //     transp: "OPAQUE".to_string(),
-    // });
 
     // Export the calendar to a file
     cal.export_ics("./calendar.ics").unwrap();

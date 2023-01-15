@@ -1,4 +1,4 @@
-type DEvent = {
+export type DEvent = {
     name: string;
     start_date: `${number}-${number}-${number}`;
     end_date?: `${number}-${number}-${number}`;
@@ -7,17 +7,17 @@ type DEvent = {
     country?: string;
     city?: string;
     organizer: string;
-}
+};
 
-type DOrganizer = {
+export type DOrganizer = {
     name: string;
     website?: string;
-}
+};
 
 declare module '*.toml' {
     const value: {
-        organizers: Record<string, DOrganizer>,
-        events: Record<string, DEvent>
-    }
-    export default value
+        organizers: Record<string, DOrganizer>;
+        events: Record<string, DEvent>;
+    };
+    export default value;
 }

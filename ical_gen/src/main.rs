@@ -62,8 +62,12 @@ fn main() {
     for (key, value) in data.events {
         println!("{}: {}", key, value.name);
 
-        let start_cal = Utc.datetime_from_str(&value.start_date, "%Y-%m-%d").unwrap();
-        let end_cal = Utc.datetime_from_str(&value.end_date.unwrap(), "%Y-%m-%d").unwrap();
+        let start_cal = Utc
+            .datetime_from_str(&value.start_date, "%Y-%m-%d")
+            .unwrap();
+        let end_cal = Utc
+            .datetime_from_str(&value.end_date.unwrap_or(value.start_date), "%Y-%m-%d")
+            .unwrap();
 
         cal.add_event(Events {
             uid: key,

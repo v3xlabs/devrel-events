@@ -1,9 +1,10 @@
 #![warn(clippy::all, clippy::pedantic, clippy::nursery)]
 
+use chrono::{DateTime, Utc};
 use serde_derive::Deserialize;
 use std::collections::HashMap;
 use std::fs;
-use web_ical::Calendar;
+use web_ical::{Calendar, Events};
 
 use toml;
 
@@ -54,6 +55,22 @@ fn main() {
         "America/New_York",
     );
 
-    
+    let start_cal: DateTime<Utc> = Utc::now();
+
+    cal.add_event(Events {
+        dtsart: start_cal,
+        dtend: start_cal,
+        uid: "786566jhjh5546@google.com".to_string(),
+        created: start_cal,
+        description: "The description".to_string(),
+        last_modified: start_cal,
+        location: "Breda NL".to_string(),
+        sequence: 0,
+        status: "CONFIRMED".to_string(),
+        summary: "My business (Not available)".to_string(),
+        transp: "OPAQUE".to_string(),
+        dtstamp: start_cal,
+    });
+
     cal.export_ics("./calendar.ics").unwrap();
 }

@@ -5,7 +5,7 @@ import { Link } from './atom/Link';
 
 export const Intro: FC = () => {
     return (
-        <div className="pb-8 mt-4 mb-4 grid grid-cols-2 gap-2">
+        <div className="pb-8 mt-4 mb-4 grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
                 <p className="max-w-xl mb-4">
                     This site is a collective of all Ethereum / Web3 related
@@ -45,7 +45,20 @@ export const Intro: FC = () => {
                 </div>
             </div>
             <div className="w-full">
-                <div className="w-full bg-blue-50 h-full"></div>
+                <div className="w-full bg-blue-50 h-full p-8 flex flex-col gap-4">
+                    <p>
+                        DevRel Events is also available as an easy to add
+                        calendar!
+                    </p>
+                    <Button
+                        as="a"
+                        href="https://devrel.events/calendar.ics"
+                        target="_blank"
+                        className="w-fit"
+                    >
+                        Add to Calendar
+                    </Button>
+                </div>
             </div>
         </div>
     );

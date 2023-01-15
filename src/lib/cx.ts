@@ -1,4 +1,4 @@
-export const cx = (...classes: string[]) =>
+export const cx = (...classes: (string | undefined)[]) =>
     classes
         .filter((a) => a)
         .map((a) => a.trim())

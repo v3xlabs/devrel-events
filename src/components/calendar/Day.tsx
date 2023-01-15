@@ -1,6 +1,6 @@
 import { FC, useMemo } from 'react';
 
-import { cx } from '../lib/cx';
+import { cx } from '../../lib/cx';
 
 export const Day: FC<{
     date: Date;

@@ -1,10 +1,11 @@
 import { FC, useMemo } from 'react';
 
 import data from '../data.toml';
-import { Calendar } from './components/Calendar';
+import { Calendar } from './components/calendar/Calendar';
 import { EventList } from './components/EventList';
 import { Footer } from './components/Footer';
 import { Header } from './components/Header';
+import { Intro } from './components/Intro';
 import { DEvent } from './data';
 import { sortEventByDate } from './lib/sorteventbydate';
 
@@ -18,8 +19,9 @@ export const App: FC = () => {
     return (
         <div className="w-full min-h-screen bg-gray-50 dark:bg-gray-900 dark:text-gray-50">
             <Header />
-            <div className="mx-auto w-full max-w-[1376px] xl:px-8">
+            <div className="mx-auto w-full max-w-[1376px] px-8">
                 <div>
+                    <Intro />
                     <Calendar year={2023} />
                     <EventList events={events} />
                 </div>

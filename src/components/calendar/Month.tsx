@@ -1,8 +1,8 @@
 import { FC, useMemo } from 'react';
 
-import { DEvent } from '../data';
-import { getDaysInMonth } from '../lib/time';
-import { notWith } from '../lib/utils';
+import { DEvent } from '../../data';
+import { getDaysInMonth } from '../../lib/time';
+import { notWith } from '../../lib/utils';
 import { Day } from './Day';
 
 const MONTHS = [

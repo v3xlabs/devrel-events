@@ -30,11 +30,14 @@ jobs:
           pnpm build
 
       - uses: actions-rs/toolchain@v1
+        name: "[Rust] Install toolchain"
         with:
           toolchain: stable
 
       - uses: actions-rs/cargo@v1
+        name: "[Rust] Run"
         with:
+          cwd: ./ical_gen
           command: run
 
       - name: "[Rust] Move Calendar"

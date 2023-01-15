@@ -44,7 +44,7 @@ export const Intro: FC = () => {
                     </Button>
                 </div>
             </div>
-            <div className="w-full">
+            <div className="w-screen sm:w-full -mx-8 sm:m-0">
                 <div className="w-full bg-blue-50 dark:bg-neutral-700 dark:bg-opacity-50 h-full p-8 flex flex-col justify-center gap-4">
                     <p>
                         DevRel Events is also available as an easy to add
@@ -54,7 +54,7 @@ export const Intro: FC = () => {
                         as="a"
                         href="https://devrel.events/calendar.ics"
                         target="_blank"
-                        className="w-fit"
+                        className="w-full sm:w-fit"
                     >
                         Add to Calendar
                     </Button>

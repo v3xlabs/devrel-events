@@ -21,8 +21,10 @@
         "@fullcalendar/core": "^6.0.3",
         "@fullcalendar/daygrid": "^6.0.3",
         "@fullcalendar/react": "^6.0.4",
+        "feather-icons": "^4.29.0",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
+        "react-feather": "^2.0.10",
         "vite-plugin-toml": "^0.5.0"
     },
     "devDependencies": {

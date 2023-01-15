@@ -20,14 +20,25 @@ jobs:
         with:
           version: 6.0.2
 
-      - name: Install packages
+      - name: "[FE] Install packages"
         run: |
           cd www
           pnpm install
-      - name: Build
+      - name: "[FE] Build"
         run: |
           cd www
           pnpm build
+
+      - uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+
+      - uses: actions-rs/cargo@v1
+        with:
+          command: run
+
+      - name: "[Rust] Move Calendar"
+        run: mv ./ical_gen/calendar.ics ./www/dist/calendar.ics
 
       - name: Edgeserver Upload
         uses: lvkdotsh/edgeserver-action@v0.0.34

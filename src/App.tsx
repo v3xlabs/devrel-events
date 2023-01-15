@@ -22,7 +22,10 @@ export const App: FC = () => {
             <div className="mx-auto w-full max-w-[1376px] px-8">
                 <div>
                     <Intro />
-                    <Calendar year={2023} />
+                    <Calendar
+                        year={2023}
+                        events={events.map(([_, event]) => event)}
+                    />
                     <EventList events={events} />
                 </div>
                 <Footer />

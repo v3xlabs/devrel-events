@@ -1,6 +1,6 @@
 #![warn(clippy::all, clippy::pedantic, clippy::nursery)]
 
-use chrono::{DateTime, Utc};
+use chrono::{DateTime, TimeZone, Utc};
 use serde_derive::Deserialize;
 use std::collections::HashMap;
 use std::fs;
@@ -55,22 +55,26 @@ fn main() {
         "America/New_York",
     );
 
-    let start_cal: DateTime<Utc> = Utc::now();
+    // Get the UTC date of 2023-01-15 18:00:00 as DateTime
+    let start_cal = Utc.with_ymd_and_hms(2023, 1, 15, 18, 0, 0).unwrap();
+    let end_cal = Utc.with_ymd_and_hms(2023, 1, 15, 19, 0, 0).unwrap();
+    let now = Utc::now();
 
     cal.add_event(Events {
+        uid: "1234".to_string(),
+        summary: "Test Event".to_string(),
+        description: "This is a test event".to_string(),
         dtsart: start_cal,
-        dtend: start_cal,
-        uid: "786566jhjh5546@google.com".to_string(),
-        created: start_cal,
-        description: "The description".to_string(),
-        last_modified: start_cal,
-        location: "Breda NL".to_string(),
+        dtend: end_cal,
+        created: now,
+        last_modified: now,
+        dtstamp: now,
+        location: "Location".to_string(),
         sequence: 0,
         status: "CONFIRMED".to_string(),
-        summary: "My business (Not available)".to_string(),
         transp: "OPAQUE".to_string(),
-        dtstamp: start_cal,
     });
 
+    // Export the calendar to a file
     cal.export_ics("./calendar.ics").unwrap();
 }

@@ -17,7 +17,7 @@ export const App: FC = () => {
     }, []);
 
     return (
-        <div className="w-full min-h-screen bg-gray-50 dark:bg-gray-900 dark:text-gray-50">
+        <div className="w-full min-h-screen bg-gray-50 dark:bg-black dark:text-gray-50">
             <Header />
             <div className="mx-auto w-full max-w-[1376px] px-8">
                 <div>

@@ -45,7 +45,7 @@ export const Intro: FC = () => {
                 </div>
             </div>
             <div className="w-full">
-                <div className="w-full bg-blue-50 h-full p-8 flex flex-col gap-4">
+                <div className="w-full bg-blue-50 dark:bg-neutral-700 dark:bg-opacity-50 h-full p-8 flex flex-col justify-center gap-4">
                     <p>
                         DevRel Events is also available as an easy to add
                         calendar!

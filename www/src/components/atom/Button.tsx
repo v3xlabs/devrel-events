@@ -21,7 +21,7 @@ export const Button: FC<
     return createElement(as, {
         className: cx(
             className,
-            'bg-blue-300 hover:brightness-90 active:brightness-75 px-4 text-white py-2 shadow-sm rounded-md'
+            'bg-blue-300 dark:bg-blue-900 hover:brightness-90 active:brightness-75 px-4 text-white py-2 shadow-sm rounded-md'
         ),
         ...properties,
     });
